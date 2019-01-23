@@ -1,12 +1,7 @@
 {% extends 'base.html' %} 
-
 {% block content %}
 
-    {% for number in list_of_numbers %}
-        <p>{{ number }}</p>
-    {% endfor %}
-
-<h2>{{ pagee_title }}</h2>
+<h2>{{ page_title }}</h2>
 <p>
     The formation of the group grew out of a meeting Gandalf had with Thorin in
     Bree which kindled Thorin's interest in recapturing his long lost family 
@@ -20,195 +15,21 @@
     and as Gandalf had planned to leave on other business, welcomed a fourteenth to fill in to their party.
 </p>
 
+{% for member in company %}
+
 <div class="row featurette">
     <div class="col-md-7">
-        <h3>Thorin Oakenshield</h3>
-        <p>Thorin II, also called the Oakenshield, King under the Mountain or the
-        Mountain King, was the son of Thráin II, the older brother of Frerin and
-        Dís, the grandson of King Thrór and the uncle of Fíli and Kíli. Thorin 
-        was best known for his deeds as leader of a company that infiltrated the
-        lost Kingdom under the Mountain to take it back from Smaug and for leading
-        an alliance of Men, Dwarves, and Elves in the Battle of the Five Armies.</p>
+        <h3>{{ member.name }}</h3>
+        <p>{{ member.description }}</p>
     </div>
     <div class="col-md-5">
         <img class="featurette-image img-responsive" 
-        src="http://www.panhistoria.com/Stacks/Novels/characterimages/T27293.jpg" alt="Generic placeholder image">
+        src={{member.image_source}} alt="Generic placeholder image">
     </div>
 </div>
 <hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive" 
-        src="http://www.filmofilia.com/wp-content/uploads/2011/07/hobbit_0.jpg" alt="Generic placeholder image">
-    </div>
-    <div class="col-md-7">
-        <h3 class="featurette-heading">Kili &amp; Fili</h3>
-        <p class="lead">Fíli and Kíli were the two most active dwarves of Thorin's
-        company, and apart from Balin, and possibly Bombur, they appeared more 
-        frequently as "individual" characters in Tolkien's novel than the rest of
-        Thorin's companions, who were most often named only in "group" references
-        to the entire company.</p>
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Óin</h3>
-        <p>Óin was the older brother of Glóin, cousin of Dwalin and Balin, and 
-        uncle of Gimli. He usually wore a brown-hooded cloak when travelling. 
-        Óin fought in the Battle of Azanulbizar along with Thorin Oakenshield, 
-        and in TA 2941 joined with Thorin and Company on the quest to reclaim the
-        Lonely Mountain wearing a brown hood.</p>
-    </div>
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive" 
-        src="https://vignette.wikia.nocookie.net/lotr/images/e/e8/Oin.jpg/revision/latest/scale-to-width-down/300?cb=20120908125247" alt="Generic placeholder image">
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive" 
-        src="https://vignette.wikia.nocookie.net/lotr/images/f/fc/Gloin_2.jpg/revision/latest/scale-to-width-down/350?cb=20120908171710" alt="Generic placeholder image">
-    </div>
-    <div class="col-md-7">
-        <h3 class="featurette-heading">Glóin</h3>
-        <p class="lead">Glóin son of Gróin was one of the Dwarves of Thorin II 
-        Oakenshield's company who set out to reclaim the Lonely Mountain in The
-        Hobbit, and was the father of Gimli, a member of the Fellowship of the Ring.</p>
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Balin</h3>
-        <p>Balin was a Dwarf leader, the son of Fundin, and elder brother of 
-        Dwalin. He was one of the thirteen Dwarves who accompanied Thorin II 
-        Oakenshield on the quest to regain the Lonely Mountain.</p>
-    </div>
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive" 
-        src="https://vignette.wikia.nocookie.net/lotr/images/c/c4/Balin_-_The_Hobbit.PNG/revision/latest/scale-to-width-down/240?cb=20120922121057" alt="Generic placeholder image">
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive" 
-        src="https://vignette.wikia.nocookie.net/lotr/images/e/e7/The-Hobbit-Dwalin-In-Pantry.jpg/revision/latest/scale-to-width-down/433?cb=20121030123722" alt="Generic placeholder image">
-    </div>
-    <div class="col-md-7">
-        <h3 class="featurette-heading">Dwalin</h3>
-        <p class="lead">Dwalin was one of the Dwarves who traveled with Bilbo 
-        and Gandalf on the quest to regain the Lonely Mountain from Smaug.
-        He was the brother of Balin and the youngest son of Fundin.</p>
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Ori</h3>
-        <p>Ori was a member of Thorin's Company of Dwarves and participated in 
-        the Quest of Erebor, as well as fighting in and surviving the Battle of 
-        Five Armies. He, along with his brothers Dori and Nori, were remote 
-        kinsmen of Thorin II Oakenshield.</p>
-    </div>
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive" 
-        src="https://vignette.wikia.nocookie.net/lotr/images/8/81/Ori.jpeg/revision/latest/scale-to-width-down/350?cb=20130205205637" alt="Generic placeholder image">
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive"
-        src="https://vignette.wikia.nocookie.net/lotr/images/2/27/Mark_Hadlow_as_Dori.jpg/revision/latest/scale-to-width-down/250?cb=201210301133532" alt="Generic placeholder image">
-    </div>
-    <div class="col-md-7">
-        <h3 class="featurette-heading">Dori</h3>
-        <p class="lead">Dori was a Dwarf of Durin's Folk, who along with his 
-        brothers Nori and Ori travelled with Bilbo Baggins and Thorin Oakenshield
-        as a member of Thorin's Company on the Quest for Erebor, to reclaim the 
-        Lonely Mountain from the Dragon Smaug.
-        Dori was among the Dwarves at Bag End who joined in singing about 
-        "blunting the knives" and "bending the forks"; as well as accompanying 
-        by playing the flute. He was described as “decent fellow despite his
-        grumbling”. He often wore a red-violet coat while on the Quest for
-        Erebor. He was noted by Thorin to be the strongest of the thirteen companions.</p>
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Nori</h3>
-        <p>Nori was a Dwarf of Durin's folk who lived in the northern Blue Mountains 
-        in Thorin's Halls and later the restored Lonely Mountain. He had two brothers
-        named Dori and Ori, and was a remote kinsman of Thorin Oakenshield. His hood
-        was purple, he played the flute, and he was very fond of regular and 
-        plentiful meals like his hobbit friend, Bilbo Baggins.</p>
-    </div>
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive" 
-        src="https://vignette.wikia.nocookie.net/thehobbitfilm/images/b/be/Nori.jpg/revision/latest/scale-to-width-down/350?cb=20180228154426" alt="Generic placeholder image">
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive"
-        src="https://vignette.wikia.nocookie.net/lotr/images/7/73/Bifur_2.jpg/revision/latest/scale-to-width-down/185?cb=20120911201025" alt="Generic placeholder image">
-    </div>
-    <div class="col-md-7">
-        <h3 class="featurette-heading">Bifur</h3>
-        <p class="lead">Bifur was a Dwarf of the late-Third Age. He is best known
-        for being a companion to Bilbo Baggins and Thorin Oakenshield on the quest
-        to regain the Lonely Mountain, along with his cousins Bofur and Bombur.</p>
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Bofur</h3>
-        <p>Bofur was a Dwarf of the late-Third Age. He is best known for being 
-        companions to Bilbo Baggins, Thorin Oakenshield and Gandalf on the quest 
-        to reclaim Lonely Mountain from the dragon Smaug, along with his brother 
-        Bombur and cousin Bifur.</p>
-    </div>
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive"
-        src="https://vignette.wikia.nocookie.net/lotr/images/5/56/Bofur_Nesbitt.jpg/revision/latest/scale-to-width-down/199?cb=20121030120400" alt="Generic placeholder image">
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive"
-        src="https://vignette.wikia.nocookie.net/lotr/images/e/ed/Bombur.jpg/revision/latest/scale-to-width-down/185?cb=20121030115452" alt="Generic placeholder image">
-    </div>
-    <div class="col-md-7">
-        <h3 class="featurette-heading">Bombur</h3>
-        <p class="lead">Bombur was a Dwarf who accompanied Thorin Oakenshield and 
-        Bilbo Baggins on their journey to the Lonely Mountain. His brother Bofur 
-        and cousin Bifur also were part of the company. Bombur was by far the 
-        fattest Dwarf in the company.</p>
-    </div>
-</div>
-<hr class="featurette-divider">
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Gandalf</h3>
-        <p>Gandalf the Grey, later known as Gandalf the White, and originally
-        named Olórin), was an  Istar (wizard), sent by the West in the Third Age 
-        to combat the threat of Sauron. He joined Thorin and his company to reclaim
-        the Lonely Mountain from Smaug, convoked the Fellowship of the Ring to destroy
-        the One Ring, and led the Free Peoples in the final campaign of the War 
-        of the Ring.</p>
-    </div>
-    <div class="col-md-5">
-        <img class="featurette-image img-responsive"
-        src="https://vignette.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest/scale-to-width-down/350?cb=20121110131754" alt="Generic placeholder image">
-    </div>
-</div>
+
+{% endfor %}
 
 
 {% endblock %}
